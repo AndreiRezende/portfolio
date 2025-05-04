@@ -1,18 +1,26 @@
-import { Container, styled, Typography } from "@mui/material";
-import Grid from '@mui/material/Grid';
+import { Container, styled, Typography, Grid } from "@mui/material";
 import Avatar from "../../../../assets/images/avatar.jpg";
 import FileDownloadIcon from '@mui/icons-material/FileDownload';
 import MailIcon from '@mui/icons-material/Mail';
 import StyledButton from "../../../../components/StyledButton/StyledButton";
 import AnimatedBackground from '../../../../components/AnimatedBackground/AnimatedBackground';
 
-const Hero = () => {
-    const StyledHero = styled("div")(() => ({
+const Hero: React.FC = () => {
+    const StyledHero = styled("div")(({ theme }) => ({
         backgroundColor: 'transparent',
-        height: "100vh",
-        display: "flex",
-        alignItems: "center",
-        position: 'relative'
+        width: "100%",
+        [theme.breakpoints.up('xs')]: {
+            display: "block",
+            padding: "20px",
+            paddingTop: "100px",
+            paddingBottom: "40px"
+        },
+        [theme.breakpoints.up('md')]: {
+            display: "flex",
+            paddingTop: "100px",
+            alignItems: "center",
+            height: "100vh"       
+        }
     }));
 
     const StyledImg = styled("img")(() => ({
@@ -31,7 +39,7 @@ const Hero = () => {
     });
 
     const Title = styled(Typography)(({theme}) => ({
-        color: theme.palette.secondary.main,
+        color: theme.palette.primary.contrastText,
         fontWeight: 700,
         marginBottom: '16px',
         [theme.breakpoints.up('md')]: {
@@ -40,7 +48,7 @@ const Hero = () => {
     }));
 
     const Subtitle = styled(Typography)(({theme}) => ({
-        color: theme.palette.secondary.main,
+        color: theme.palette.primary.contrastText,
         fontWeight: 400,
         marginBottom: '32px',
         [theme.breakpoints.up('md')]: {
@@ -50,10 +58,10 @@ const Hero = () => {
 
     return (
         <>
-            <AnimatedBackground />
             
             <StyledHero>
                 <Container maxWidth="lg">
+                    <AnimatedBackground />
                     <ContentWrapper>
                         <Grid container spacing={4}>
                             <Grid size={{ xs: 12, md: 4 }} display="flex" alignItems="center">
@@ -68,13 +76,13 @@ const Hero = () => {
                                 </Subtitle>
                                 <Grid container spacing={3} justifyContent="center">
                                     <Grid size={{ xs: 12, sm: 6, md: 4 }} display="flex" justifyContent="center">
-                                        <StyledButton>
+                                        <StyledButton onClick={() => console.log("dasda")}>
                                             <MailIcon/>
                                             <Typography>Contact Me</Typography>
                                         </StyledButton>
                                     </Grid>
                                     <Grid size={{ xs: 12, sm: 6, md: 4 }} display="flex" justifyContent="center">
-                                        <StyledButton>
+                                        <StyledButton onClick={() => console.log("download")}>
                                             <FileDownloadIcon />
                                             <Typography>Download CV</Typography>
                                         </StyledButton>

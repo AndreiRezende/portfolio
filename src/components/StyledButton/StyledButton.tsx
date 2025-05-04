@@ -3,7 +3,8 @@ import { ReactNode } from "react";
 import { keyframes } from "@emotion/react";
 
 interface StyledButtonProps {
-  children: ReactNode;
+  children: ReactNode
+  onClick: () => void
 }
 
 const halftone = keyframes`
@@ -21,11 +22,11 @@ const halftone = keyframes`
 
 const CustomButton = styled("button")(({ theme }) => ({
   backgroundColor: "transparent",
-  border: `2px solid ${theme.palette.secondary.main}`,
+  border: `2px solid ${theme.palette.primary.contrastText}`,
   borderBottomWidth: "4px",
   borderRadius: "3px",
   padding: "1em 2em",
-  color: theme.palette.secondary.main,
+  color: theme.palette.primary.contrastText,
   display: "inline-flex",
   alignItems: "center",
   justifyContent: "center",
@@ -60,9 +61,9 @@ const CustomButton = styled("button")(({ theme }) => ({
   },
 
   '&:hover': {
-    color: theme.palette.primary.contrastText,
+    color: theme.palette.primary.dark,
     backgroundColor: theme.palette.secondary.main,
-    borderColor: theme.palette.primary.light,
+    borderColor: theme.palette.primary.dark,
     transitionDelay: '0.2s'
   },
 
@@ -77,9 +78,9 @@ const CustomButton = styled("button")(({ theme }) => ({
   }
 }));
 
-const StyledButton: React.FC<StyledButtonProps> = ({ children }) => {
+const StyledButton: React.FC<StyledButtonProps> = ({ children, onClick }) => {
   return (
-    <CustomButton>
+    <CustomButton onClick={onClick}>
       {children}
     </CustomButton>
   );

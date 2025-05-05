@@ -1,5 +1,6 @@
 import Home from "./pages/Home/Home"
 import About from "./pages/Home/sections/About/About"
+import Experiences from "./pages/Home/sections/Experiences/Experiences"
 
 
 const App = () => {
@@ -9,6 +10,7 @@ const App = () => {
       <Home />
       
       <About />
+      <Experiences />
     </>
   )
 }

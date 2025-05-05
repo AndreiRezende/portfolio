@@ -1,37 +1,70 @@
-import { Box, IconButton, Typography, Container } from "@mui/material";
+import { Box, IconButton, Typography, Container, Button } from "@mui/material";
 import { useState } from "react";
 import ExperienceCard from "../../../../components/ExperienceCard/ExperienceCard";
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
-const experiences = [
+const experiencesTranslations = {
+    en: {
+        sectionTitle: "Experiences",
+        experiences: [
+        {
+            title: "Scientific Initiation",
+            description: "Research on automation of financial data using Python and NLP..."
+        },
+        {
+            title: "Calculus Tutoring",
+            description: "I taught reinforcement classes for Engineering students..."
+        }
+        ]
+    },
+    pt: {
+        sectionTitle: "Experiências",
+        experiences: [
+        {
+            title: "Iniciação Científica",
+            description: "Pesquisa em automação de dados financeiros usando Python e NLP..."
+        },
+        {
+            title: "Monitoria de Cálculo",
+            description: "Ministrei aulas de reforço para alunos de Engenharia..."
+        }
+        ]
+    }
+};
+
+const experiencesData = [
     {
-      title: "Iniciação Científica",
       images: [
         "/assets/images/sicite.jpg",
         "/assets/images/certificado_sicite.jpg"
-      ],
-      description: "Iniciação científica..."
+      ]
     },
+    
     {
-      title: "Monitoria de Cálculo",
       images: [
         "/assets/images/monitoria.jpg"
-      ],
-      description: "Fui monitor bolsista da disciplina Cálculo..."
+      ]
     }
   ];
 
 const Experiences = () => {
 
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [language, setLanguage] = useState<'en' | 'pt'>('en');
+    const { sectionTitle, experiences } = experiencesTranslations[language];
+    
+    const combinedExperiences = experiences.map((exp, index) => ({
+        ...exp,
+        images: experiencesData[index].images
+      }));
 
     const nextExperience = () => {
-      setCurrentIndex((prev) => (prev === experiences.length - 1 ? 0 : prev + 1));
+    setCurrentIndex((prev) => (prev === combinedExperiences.length - 1 ? 0 : prev + 1));
     };
-  
+
     const prevExperience = () => {
-      setCurrentIndex((prev) => (prev === 0 ? experiences.length - 1 : prev - 1));
+    setCurrentIndex((prev) => (prev === 0 ? combinedExperiences.length - 1 : prev - 1));
     };
 
     return (
@@ -48,6 +81,24 @@ const Experiences = () => {
         }}
         >
             <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 2 }}>
+                <Box sx={{ textAlign: 'right', mb: -4}}>
+                    <Button
+                        variant="outlined"
+                        onClick={() => setLanguage(lang => lang === 'en' ? 'pt' : 'en')}
+                        sx={{
+                        color: 'primary.dark',
+                        borderColor: 'primary.dark',
+                        '&:hover': {
+                            bgcolor: 'primary.dark',
+                            transform: 'scale(1.1)',
+                            borderColor: 'secondary.dark',
+                            color: 'primary.contrastText'
+                        }
+                        }}
+                    >
+                        {language === 'en' ? 'PT' : 'EN'}
+                    </Button>
+                </Box>
                 <Typography 
                     variant="h2" 
                     sx={{
@@ -57,7 +108,7 @@ const Experiences = () => {
                         textShadow: '2px 2px 4px rgba(0,0,0,0.5)'
                     }}
                 >
-                    Experiences
+                    {sectionTitle}
                 </Typography>
             </Container>
 
@@ -69,9 +120,13 @@ const Experiences = () => {
                 left: `${-currentIndex * 100}%`,
                 transition: 'left 0.5s ease'
             }}>
-                {experiences.map((exp, index) => (
+                {combinedExperiences.map((exp, index) => (
                     <Box key={index} sx={{ width: '100%', height: '100%' }}>
-                        <ExperienceCard {...exp} />
+                        <ExperienceCard 
+                            title={exp.title}
+                            images={exp.images}
+                            description={exp.description}
+                        />
                     </Box>
                 ))}
             </Box>

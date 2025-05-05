@@ -5,20 +5,9 @@ import AnimationComponent from "../../../../components/AnimationComponent/Animat
 import GradeIcon from '@mui/icons-material/Grade';
 
 const About: React.FC = () => {
-  const [language, setLanguage] = useState<'pt' | 'en'>('pt');
+  const [language, setLanguage] = useState<'pt' | 'en'>('en');
   
   const texts = {
-    pt: {
-      aboutMe: "Sobre mim",
-      description: "Sou estudante do curso de Engenharia de Computação na UTFPR, com interesses nas áreas de dados e automação e, mais recentemente, conhecendo mais sobre Inteligência Artificial e Machine Learning, que são áreas nas quais estou começando a estudar. Desenvolvi uma pesquisa (Iniciação Científica) focada na automação da coleta e tratamento de dados textuais do mercado financeiro, utilizando Python, MongoDB e técnicas de Processamento de Linguagem Natural (PLN), o que me permitiu aprofundar habilidades em análise e manipulação de dados. Atuo como voluntário no departamento de gestão de pessoas do projeto de extensão Grupo ELLP, contribuindo para a organização interna e de processos seletivos, além de participar como monitor nas oficinas de aprendizagem lúdica sobre temas como Desenvolvimento Web e Desenvolvimento de Jogos, voltadas a crianças e adolescentes.",
-      education: "Educação",
-      student: "Graduando",
-      skills: "Habilidades",
-      coefficient: "Coeficiente Absoluto",
-      course: "Eng. de Computação",
-      grade: "0,9014",
-      average: "Média ponderada atual"
-    },
     en: {
       aboutMe: "About me",
       description: "I am a Computer Engineering student at UTFPR, with interests in data and automation, and more recently, I have been exploring Artificial Intelligence and Machine Learning—fields in which I am just beginning my studies. I conducted a research project (Scientific Initiation) focused on automating the collection and processing of textual data from the financial market, using Python, MongoDB, and Natural Language Processing (NLP) techniques, which allowed me to deepen my skills in data analysis and manipulation. I volunteer in the people management department of the extension project Grupo ELLP, contributing to internal organization and selection processes, as well as acting as a mentor in playful learning workshops on topics such as Web Development and Game Development, aimed at children and teenagers.",
@@ -29,6 +18,17 @@ const About: React.FC = () => {
       course: "Computer Engineering",
       grade: "0.9014",
       average: "Current weighted average"
+    },
+    pt: {
+      aboutMe: "Sobre mim",
+      description: "Sou estudante do curso de Engenharia de Computação na UTFPR, com interesses nas áreas de dados e automação e, mais recentemente, conhecendo mais sobre Inteligência Artificial e Machine Learning, que são áreas nas quais estou começando a estudar. Desenvolvi uma pesquisa (Iniciação Científica) focada na automação da coleta e tratamento de dados textuais do mercado financeiro, utilizando Python, MongoDB e técnicas de Processamento de Linguagem Natural (PLN), o que me permitiu aprofundar habilidades em análise e manipulação de dados. Atuo como voluntário no departamento de gestão de pessoas do projeto de extensão Grupo ELLP, contribuindo para a organização interna e de processos seletivos, além de participar como monitor nas oficinas de aprendizagem lúdica sobre temas como Desenvolvimento Web e Desenvolvimento de Jogos, voltadas a crianças e adolescentes.",
+      education: "Educação",
+      student: "Graduando",
+      skills: "Habilidades",
+      coefficient: "Coeficiente Absoluto",
+      course: "Eng. de Computação",
+      grade: "0,9014",
+      average: "Média ponderada atual"
     }
   };
 
@@ -69,7 +69,7 @@ const About: React.FC = () => {
           <Box textAlign="right" mb={2}>
             <Button 
               variant="outlined" 
-              onClick={() => setLanguage(lang => lang === 'pt' ? 'en' : 'pt')}
+              onClick={() => setLanguage(lang => lang === 'en' ? 'pt' : 'en')}
               sx={{ 
                 color: 'primary.contrastText', 
                 borderColor: 'primary.contrastText',
@@ -77,11 +77,11 @@ const About: React.FC = () => {
                   borderColor: 'secondary.main',
                   backgroundColor: 'secondary.main',
                   color: 'primary.dark',
-                  transform: 'translateY(-5px)'
+                  transform: 'scale(1.1)'
                 }
               }}
             >
-              {language === 'pt' ? 'EN' : 'PT'}
+              {language === 'pt' ? 'PT' : 'EN'}
             </Button>
           </Box>
 

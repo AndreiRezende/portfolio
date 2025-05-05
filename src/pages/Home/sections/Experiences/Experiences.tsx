@@ -43,14 +43,24 @@ const Experiences = () => {
             position: 'relative',
             overflow: 'hidden',
             backgroundColor: 'secondary.dark',
-            color: 'primary.contrastText'
+            color: 'primary.contrastText',
+            pt: 8
         }}
         >
-            <Container maxWidth="lg">
-                <Typography variant="h2" textAlign="center" mb={4}>
+            <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 2 }}>
+                <Typography 
+                    variant="h2" 
+                    sx={{
+                        textAlign: 'center',
+                        mb: 4,
+                        fontWeight: 'bold',
+                        textShadow: '2px 2px 4px rgba(0,0,0,0.5)'
+                    }}
+                >
                     Experiences
                 </Typography>
             </Container>
+
             <Box sx={{
                 width: `${experiences.length * 100}%`,
                 height: 'calc(100vh - 120px)',

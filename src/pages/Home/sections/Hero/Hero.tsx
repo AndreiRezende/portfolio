@@ -4,6 +4,7 @@ import FileDownloadIcon from '@mui/icons-material/FileDownload';
 import MailIcon from '@mui/icons-material/Mail';
 import StyledButton from "../../../../components/StyledButton/StyledButton";
 import AnimatedBackground from '../../../../components/AnimatedBackground/AnimatedBackground';
+import CV from "../../../../assets/pdfs/CV.pdf"
 
 const Hero: React.FC = () => {
     const StyledHero = styled("div")(({ theme }) => ({
@@ -22,6 +23,24 @@ const Hero: React.FC = () => {
             height: "100vh"       
         }
     }));
+
+    const handleDownload = () => {
+        const link = document.createElement('a');
+        link.href = CV
+        link.download = 'CV.pdf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    };
+
+    const handleEmail = () => {
+        const emailAddress = 'andrei.rezende@hotmail.com';
+        const subject = 'Internship opportunity at...';
+        const body = 'Hello! I saw your portfolio...';
+
+        const mailtoLink = `mailto:${emailAddress}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        window.open(mailtoLink);
+    }
 
     const StyledImg = styled("img")(() => ({
         width: "100%",
@@ -76,13 +95,13 @@ const Hero: React.FC = () => {
                                 </Subtitle>
                                 <Grid container spacing={3} justifyContent="center">
                                     <Grid size={{ xs: 12, sm: 6, md: 4 }} display="flex" justifyContent="center">
-                                        <StyledButton onClick={() => console.log("dasda")}>
+                                        <StyledButton onClick={() => handleEmail()}>
                                             <MailIcon/>
                                             <Typography>Contact Me</Typography>
                                         </StyledButton>
                                     </Grid>
                                     <Grid size={{ xs: 12, sm: 6, md: 4 }} display="flex" justifyContent="center">
-                                        <StyledButton onClick={() => console.log("download")}>
+                                        <StyledButton onClick={() => handleDownload()}>
                                             <FileDownloadIcon />
                                             <Typography>Download CV</Typography>
                                         </StyledButton>

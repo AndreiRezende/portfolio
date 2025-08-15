@@ -20,13 +20,20 @@ const NavBar = () => {
     background: theme.palette.primary.main
   }));
 
+
+const scrollToSection = (id: string) => {
+  const section = document.getElementById(id);
+  if (section) {
+    section.scrollIntoView({ behavior: "smooth" });
+  }
+};
+
   return (
     <AppBar position="absolute">
       <StyledToolbar>
-        <StyledMenuItem>About</StyledMenuItem>
-        <StyledMenuItem>Skills</StyledMenuItem>
-        <StyledMenuItem>Experiences</StyledMenuItem>
-        <StyledMenuItem>Projects</StyledMenuItem>
+        <StyledMenuItem onClick={() => scrollToSection("about-section")}>About</StyledMenuItem>
+        <StyledMenuItem onClick={() => scrollToSection("experiences")}>Experiences</StyledMenuItem>
+        <StyledMenuItem onClick={() => scrollToSection("projects")}>Projects</StyledMenuItem>
       </StyledToolbar>
     </AppBar>
   );

@@ -10,11 +10,11 @@ const experiencesTranslations = {
         experiences: [
         {
             title: "Scientific Initiation",
-            description: "Research on automation of financial data using Python and NLP..."
+            description: "I conducted a scientific research project focused on automating the news collection process from multiple sources about the financial market. In this project, I automated the collection, preprocessing, and storage of textual data related to the Brazilian stock market. The main goal was to create a solid textual database, with the data already preprocessed using Natural Language Processing (NLP) techniques, to support future predictive models aiming to forecast market fluctuations. This work was one of those selected by my university to be personally presented at the SEI-SICITE 2024 event. It was an enriching experience that provided me with valuable exposure to the academic environment and allowed me to deepen my understanding of the research process, as well as to exchange knowledge with other works and researchers."
         },
         {
-            title: "Calculus Tutoring",
-            description: "I taught reinforcement classes for Engineering students..."
+            title: "Teaching Assistant for Calculus 2",
+            description: "I served as a teaching assistant for the Differential and Integral Calculus 2 course in 2021, an experience that enhanced my communication and teaching skills. During this period, I had the opportunity to help other students understand course concepts, which allowed me to develop a clearer and more effective approach to teaching and conveying knowledge."
         }
         ]
     },
@@ -23,11 +23,11 @@ const experiencesTranslations = {
         experiences: [
         {
             title: "Iniciação Científica",
-            description: "Pesquisa em automação de dados financeiros usando Python e NLP..."
+            description: "Realizei uma iniciação científica com foco na automação do processo de coleta de notícias de múltiplas fontes sobre o mercado financeiro. Neste projeto, automatizei a coleta, o pré-processamento e o armazenamento de dados textuais relacionados ao mercado acionário brasileiro. O objetivo principal foi criar uma sólida base textual, com os dados já pré-processados por meio de técnicas de Processamento de Linguagem Natural (PLN), para servir de apoio a futuros modelos preditivos que busquem prever a oscilação desse mercado. Este trabalho foi um dos selecionados pela minha faculdade para ser apresentado pessoalmente no evento SEI-SICITE 2024. Foi uma experiência enriquecedora que me proporcionou um valioso contato com o ambiente acadêmico e me permitiu aprofundar minha compreensão sobre o processo de pesquisa, além de trocar conhecimentos com outros trabalhos e pesquisadores."
         },
         {
-            title: "Monitoria de Cálculo",
-            description: "Ministrei aulas de reforço para alunos de Engenharia..."
+            title: "Monitor da disciplina de Cálculo Diferencial e Integral 2",
+            description: "Atuei como monitor da disciplina de Cálculo Diferencial e Integral 2 em 2021, uma experiência que aprimorou minhas habilidades de comunicação e didática. Durante esse período, tive a oportunidade de auxiliar outros estudantes a compreenderem conceitos da matéria, o que me permitiu desenvolver uma abordagem mais clara e eficaz para ensinar e transmitir conhecimento."
         }
         ]
     }
@@ -40,7 +40,7 @@ const experiencesData = [
         "/assets/images/certificado_sicite.jpg"
       ]
     },
-    
+
     {
       images: [
         "/assets/images/monitoria.jpg"

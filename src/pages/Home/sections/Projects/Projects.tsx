@@ -33,7 +33,7 @@ const ProjectsSection: React.FC = () => {
             title: "Basic Attacking Stats Dashboard - BI",
             subtitle: "May 2025",
             srcImg: PowerBI,
-            description: "Game to escape the maze, but not only that. An algorithm has been created that randomly generates a new maze each time the game is started. In this game, the user can use the keyboard keys to move until they find the flag and win the game",
+            description: "This Power BI dashboard is an introductory project, showcasing basic skills I've gained from immersive courses. It's a hands-on exercise designed to practice and demonstrate fundamental knowledge of data visualization.",
             technologies: "Technologies: PowerBI, SQL, Excel",
             codeURL: "https://drive.google.com/file/d/1U4SNkTzGS34w7A3BAe3qHbSRUKjBoSZs/view?usp=drive_link",
         },

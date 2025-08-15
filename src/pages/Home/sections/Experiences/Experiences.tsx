@@ -3,6 +3,9 @@ import { useState } from "react";
 import ExperienceCard from "../../../../components/ExperienceCard/ExperienceCard";
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import Monitoria from "../../../../assets/images/monitoria.jpg";
+import Sicite from "../../../../assets/images/sicite.jpg";
+import Certificado from "../../../../assets/images/certificado_sicite.jpg"
 
 const experiencesTranslations = {
     en: {
@@ -36,14 +39,14 @@ const experiencesTranslations = {
 const experiencesData = [
     {
       images: [
-        "/assets/images/sicite.jpg",
-        "/assets/images/certificado_sicite.jpg"
+        Sicite,
+        Certificado
       ]
     },
 
     {
       images: [
-        "/assets/images/monitoria.jpg"
+        Monitoria
       ]
     }
   ];

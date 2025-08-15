@@ -1,6 +1,9 @@
 import { Box, Container, Grid, Typography, styled } from "@mui/material";
 import ProjectCard, { ProjectCardProps } from "../../../../components/ProjectCard/ProjectCard";
 import AnimationComponent from "../../../../components/AnimationComponent/AnimationComponent";
+import Sofascore from "../../../../assets/images/Sofascore.png";
+import RedditImg from "../../../../assets/images/reddit.png";
+import PowerBI from "../../../../assets/images/powerbi.jpg";
 
 const ProjectsSection: React.FC = () => {
 
@@ -13,7 +16,7 @@ const ProjectsSection: React.FC = () => {
         {
             title: "SofaScore Data Web Scraping",
             subtitle: "Jun 2025 - Jul 2025",
-            srcImg: "/src/assets/images/sofascore.png",
+            srcImg: Sofascore,
             description: "This project consists of one part of a web scraping pipeline designed to collect football match data from SofaScore.",
             technologies: "Technologies: Python, SQL, Selenium, AWS S3",
             codeURL: "https://github.com/AndreiRezende/sofascore-scrap",
@@ -21,7 +24,7 @@ const ProjectsSection: React.FC = () => {
         {
             title: "Reddit Investment Data Scraper",
             subtitle: "Mar 2024 - Aug 2024",
-            srcImg: "/src/assets/images/reddit.png",
+            srcImg: RedditImg,
             description: "This project is centered on the automated collection, preprocessing, and storage of textual data from a subreddit.",
             technologies: "Technologies: Python, Reddit API, spaCy, NLP, MongoDB",
             codeURL: "https://github.com/AndreiRezende/reddit-financial-scraper",
@@ -29,7 +32,7 @@ const ProjectsSection: React.FC = () => {
         {
             title: "Basic Attacking Stats Dashboard - BI",
             subtitle: "May 2025",
-            srcImg: "/src/assets/images/powerbi.jpg",
+            srcImg: PowerBI,
             description: "Game to escape the maze, but not only that. An algorithm has been created that randomly generates a new maze each time the game is started. In this game, the user can use the keyboard keys to move until they find the flag and win the game",
             technologies: "Technologies: PowerBI, SQL, Excel",
             codeURL: "https://drive.google.com/file/d/1U4SNkTzGS34w7A3BAe3qHbSRUKjBoSZs/view?usp=drive_link",
